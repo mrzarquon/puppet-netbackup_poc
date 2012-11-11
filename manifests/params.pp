@@ -5,13 +5,14 @@ class netbackup_poc::params{
 
   case $architecture {
     "i86pc", "i386" : {
-      $folder = "NetBackup_6.5_CLIENTS"
+      $nb_vers = "6.5"
     }
     "x86_64", "sun4u" : {
-      $folder = "NetBackup_7.5_CLIENTS"
+      $nb_vers = "7.5"
     }
   }
 
+  $folder = "NetBackup_${nb_vers}_CLIENTS"
   $installer = "${folder}_.tar.gz"
 
   case $osfamily {
